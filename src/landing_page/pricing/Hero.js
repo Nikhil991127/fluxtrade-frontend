@@ -2,19 +2,16 @@ import React from "react";
 
 const chargesData = [
   {
-    image: "media/images/pricingEquity.svg",
     title: "Free equity delivery",
     description:
       "All equity delivery investments (NSE, BSE) are absolutely free — ₹0 brokerage.",
   },
   {
-    image: "media/images/intradayTrades.svg",
     title: "Intraday and F&O trades",
     description:
-      "Flat ₹20 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity.",
+      "Flat ₹15 or 0.03% (whichever is lower) per executed order on intraday trades across equity, currency, and commodity.",
   },
   {
-    image: "media/images/pricingEquity.svg",
     title: "Free direct MF",
     description:
       "All direct mutual fund investments are absolutely free — ₹0 commissions & DP charges.",
@@ -23,32 +20,27 @@ const chargesData = [
 
 function Hero() {
   return (
-    <section className="container my-5">
+    <section className="container" style={{ paddingTop: "9rem", paddingBottom: "3rem" }}>
 
       {/* Header */}
       <div className="text-center mb-5 px-3">
-        <h1>Charges</h1>
-        <h3 className="text-muted fs-5 mt-2">
+        <div className="eyebrow justify-content-center">Transparent by design</div>
+        <h1 className="display-flux-md">Charges</h1>
+        <p className="mt-2">
           List of all charges and taxes
-        </h3>
+        </p>
       </div>
 
       {/* Cards */}
       <div className="row gy-4 text-center">
         {chargesData.map((item, index) => (
           <div key={index} className="col-12 col-md-6 col-lg-4">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="img-fluid mb-3"
-              style={{ maxWidth: "160px" }}
-            />
-
-            <h2 className="fs-5 mb-2">{item.title}</h2>
-
-            <p className="text-muted px-3">
-              {item.description}
-            </p>
+            <div className="card-flux">
+              <span className="stat-price" style={{ fontSize: "1.4rem" }}>{item.title}</span>
+              <p className="px-2 mb-0">
+                {item.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

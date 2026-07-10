@@ -7,68 +7,55 @@ import Universe from "./Universe";
 
 function ProductsPage() {
   let data1 = {
-    imageURL:"media/images/kite.png",
-    productName:"Kite",
-    productDesription:"Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more. Enjoy the Kite experience seamlessly on your Android and iOS devices.",
-    tryDemo:"",
-    learnMore:"",
-    googlePlay:"",
-    appStore:""
+    illustration: "candle",
+    productName: "Pulse",
+    productDesription: "Our flagship trading app — streaming market data, fast charting, and an interface with nothing to trip over. Available on Android and iOS.",
+    tryDemo: "",
+    learnMore: "",
+    showBadges: true,
   }
 
   let data2 = {
-    imageURL:"media/images/console.png",
-    productName:"Console",
-    productDesription:"The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations.",
-    learnMore:""
+    illustration: "donut",
+    productName: "Ledger",
+    productDesription: "Your account's control room. Track every trade, tax obligation, and portfolio shift in one dashboard, with reports that don't need a spreadsheet.",
+    learnMore: ""
   }
 
   let data3 = {
-    imageURL:"media/images/coin.png",
-    productName:"Coin",
-    productDesription:"Buy direct mutual funds online, commission-free, delivered directly to your Demat account. Enjoy the investment experience on your Android and iOS devices.",
-    tryDemo:"",
-    learnMore:"",
-    googlePlay:"",
-    appStore:""
+    illustration: "area",
+    productName: "Sprout",
+    productDesription: "Direct mutual funds with zero commission, invested straight into your own demat account instead of sitting with a distributor.",
+    tryDemo: "",
+    learnMore: "",
+    showBadges: true,
   }
-  let data4 ={
-    imageURL:"media/images/kiteconnect.png",
-    productName:"kite Connect API",
-    productDesription:"Build powerful trading platforms and experiences with our super simple HTTP/JSON APIs. If you are a startup, build your investment app and showcase it to our clientbase.",
-    learnMore:""
+  let data4 = {
+    illustration: "code",
+    productName: "Flux API",
+    productDesription: "A clean HTTP/JSON API for building on top of our exchange connectivity. If you're a startup, ship your investment app on our infrastructure.",
+    learnMore: ""
   }
-  let data5 ={
-    imageURL:"media/images/varsity.png",
-    productName:"Varsity mobile",
-    productDesription:"An easy to grasp, collection of stock market lessons with in-depth coverage and illustrations. Content is broken down into bite-size cards to help you learn on the go.",
-    tryDemo:"",
-    learnMore:"",
-    googlePlay:"",
-    appStore:""
+  let data5 = {
+    illustration: "bar",
+    productName: "Flux Academy",
+    productDesription: "Bite-sized lessons on markets, from your first order to reading a balance sheet, built for learning in five minutes between meetings.",
+    tryDemo: "",
+    learnMore: "",
+    showBadges: true,
   }
 
   return (
-    <div style={{ marginTop: "15vh" }}>
+    <div style={{ marginTop: "6vh" }}>
       <Hero />
-      <LeftSection
-       data = {data1}
-      />
-      <RightSection
-        data = {data2}
-      />
-      <LeftSection
-       data = {data3}
-      />
-      <RightSection
-       data = {data4}
-      />
-      <LeftSection
-        data = {data5}
-      />
-      <p className="text-center mt-5 mb-5">
-        Want to know more about our technology stack? Check out the FluxTrade.tech
-        blog.
+      <LeftSection data={data1} />
+      <RightSection data={data2} />
+      <LeftSection data={data3} />
+      <RightSection data={data4} />
+      <LeftSection data={data5} />
+      <p className="text-center" style={{ color: "var(--text-dim)" }}>
+        Want to know more about our technology stack? Check out the Flux.tech
+        engineering blog.
       </p>
       <Universe />
     </div>

@@ -4,7 +4,7 @@ const quickLinks = [
   "Track account opening",
   "Track segment activation",
   "Intraday margins",
-  "Kite user manual",
+  "Pulse user manual",
 ];
 
 const featuredLinks = [
@@ -15,15 +15,15 @@ const featuredLinks = [
 function Hero() {
   return (
     <section
-      id="supportHero"
-      className="container-fluid py-5 mt-5"
+      className="container-fluid hero-support-flux"
+      style={{ paddingTop: "8rem", paddingBottom: "3rem" }}
     >
       <div className="container">
 
         {/* Header */}
         <div className="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
-          <h1 className="fs-3 mb-0">Support Portal</h1>
-          <a href="#" className="fs-5 text-decoration-none">
+          <h1 className="display-flux-md mb-0">Support Portal</h1>
+          <a href="#" className="link-flux">
             Track Tickets
           </a>
         </div>
@@ -39,7 +39,7 @@ function Hero() {
 
             <input
               type="text"
-              className="form-control mb-3"
+              className="form-control-flux mb-3"
               placeholder="Eg. how do I activate F&O"
             />
 
@@ -48,7 +48,8 @@ function Hero() {
                 <a
                   key={index}
                   href="#"
-                  className="text-decoration-none fs-6"
+                  className="fs-6"
+                  style={{ color: "var(--text-dim)", textDecoration: "none" }}
                 >
                   {link}
                 </a>
@@ -62,7 +63,7 @@ function Hero() {
             <ol className="ps-3">
               {featuredLinks.map((item, index) => (
                 <li key={index} className="mb-2">
-                  <a href="#" className="text-decoration-none">
+                  <a href="#" style={{ color: "var(--text-dim)", textDecoration: "none" }}>
                     {item}
                   </a>
                 </li>

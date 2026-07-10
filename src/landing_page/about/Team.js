@@ -1,27 +1,25 @@
 import React from "react";
+import { Monogram } from "../Illustrations";
 
 const teamMembers = [
   {
-    name: "Nikhil Sharma",
+    name: "Aanya Rao",
     role: "Founder, CEO",
-    image: "media/images/niikhil.jpg",
     description:
-      "The company was founded to overcome the challenges faced by traders and investors. Since its inception, it has played a key role in transforming the Indian broking industry.",
+      "Aanya spent six years building exchange infrastructure before starting Fluxtrade to fix what she saw as a broken relationship between brokers and traders: too much noise, not enough respect for people's attention or money.",
     isFounder: true,
   },
   {
-    name: "Janvi",
-    role: "Co-founder, CFO",
-    image: "media/images/janvi.jpeg",
+    name: "Kabir Malhotra",
+    role: "Co-founder, CTO",
     description:
-      "Janvi is an astute and experienced investor and heads financial planning. An avid reader, she enjoys strategy games like chess.",
+      "Kabir leads engineering and owns the matching engine end to end. Previously built low-latency systems for a commodities desk; unwinds by restoring old mechanical keyboards.",
   },
   {
-    name: "Raghav",
-    role: "Co-founder, CFO",
-    image: "media/images/raghav.jpeg",
+    name: "Devika Menon",
+    role: "Co-founder, Head of Risk",
     description:
-      "Raghav oversees operations and compliance. He holds multiple financial certifications and enjoys cycling and adventure sports.",
+      "Devika built the real-time risk engine and the Guardrails feature. She holds a background in quantitative finance and spends weekends running long-distance trails.",
   },
 ];
 
@@ -30,46 +28,47 @@ function Team() {
   const others = teamMembers.filter(m => !m.isFounder);
 
   return (
-    <section className="container my-5">
-      
-      {/* Founder Section */}
-      <div className="row align-items-center gy-4 mb-5">
-        <div className="col-12 col-lg-4 text-center">
-          <img
-            src={founder.image}
-            alt={founder.name}
-            className="img-fluid rounded-circle mb-3"
-            style={{ maxWidth: "220px" }}
-          />
-          <h4 className="mb-1">{founder.name}</h4>
-          <p className="text-muted">{founder.role}</p>
-        </div>
+    <section className="section-flux">
+      <div className="container">
 
-        <div className="col-12 col-lg-8">
-          <h2 className="mb-3">People</h2>
-          <p className="text-muted">{founder.description}</p>
-        </div>
-      </div>
+        {/* Founder Section */}
+        <div className="card-flux mb-5">
+          <div className="row align-items-center gy-4">
+            <div className="col-12 col-lg-4 text-center">
+              <div className="d-flex justify-content-center mb-3">
+                <Monogram name={founder.name} tone="accent" />
+              </div>
+              <h4 className="mb-1">{founder.name}</h4>
+              <p className="mb-0" style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--accent)" }}>{founder.role}</p>
+            </div>
 
-      {/* Other Team Members */}
-      <div className="row gy-5">
-        {others.map((member, index) => (
-          <div key={index} className="col-12 col-md-6 text-center">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="img-fluid rounded-circle mb-3"
-              style={{ maxWidth: "180px" }}
-            />
-            <h4 className="mb-1">{member.name}</h4>
-            <p className="text-muted">{member.role}</p>
-            <p className="text-muted px-3">
-              {member.description}
-            </p>
+            <div className="col-12 col-lg-8">
+              <div className="eyebrow">Leadership</div>
+              <h2 className="display-flux-md mb-3">People</h2>
+              <p>{founder.description}</p>
+            </div>
           </div>
-        ))}
-      </div>
+        </div>
 
+        {/* Other Team Members */}
+        <div className="row gy-4">
+          {others.map((member, index) => (
+            <div key={index} className="col-12 col-md-6">
+              <div className="card-flux text-center">
+                <div className="d-flex justify-content-center mb-3">
+                  <Monogram name={member.name} tone={index % 2 === 0 ? "coral" : "accent"} size={140} />
+                </div>
+                <h4 className="mb-1">{member.name}</h4>
+                <p className="mb-2" style={{ fontFamily: "var(--font-mono)", fontSize: "0.78rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--accent)" }}>{member.role}</p>
+                <p className="px-3 mb-0">
+                  {member.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
     </section>
   );
 }

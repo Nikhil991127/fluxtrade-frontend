@@ -64,47 +64,50 @@ const ticketTopics = [
 
 function CreateTicket() {
   return (
-    <section className="container my-5">
+    <section className="section-flux">
+      <div className="container">
 
-      {/* Heading */}
-      <div className="mb-4 px-3">
-        <h1 className="fs-2">
-          To create a ticket, select a relevant topic
-        </h1>
-      </div>
+        {/* Heading */}
+        <div className="mb-4 px-3">
+          <div className="eyebrow">Help center</div>
+          <h1 className="display-flux-md">
+            To create a ticket, select a relevant topic
+          </h1>
+        </div>
 
-      {/* Ticket Categories */}
-      <div className="row gy-4">
-        {ticketTopics.map((topic, index) => (
-          <div key={index} className="col-12 col-sm-6 col-lg-4">
-            <div className="border rounded p-4 h-100">
+        {/* Ticket Categories */}
+        <div className="row gy-4">
+          {ticketTopics.map((topic, index) => (
+            <div key={index} className="col-12 col-sm-6 col-lg-4">
+              <div className="card-flux ticket-card-flux">
 
-              <h4 className="mb-3">
-                <i
-                  className="fa fa-plus-circle me-2 text-primary"
-                  aria-hidden="true"
-                ></i>
-                {topic.title}
-              </h4>
+                <h4>
+                  <i
+                    className="fa fa-plus-circle"
+                    aria-hidden="true"
+                  ></i>
+                  {topic.title}
+                </h4>
 
-              <ul className="list-unstyled mb-0">
-                {topic.links.map((link, idx) => (
-                  <li key={idx} className="mb-2">
-                    <a
-                      href="#"
-                      className="text-decoration-none text-muted"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                <ul className="list-unstyled mb-0">
+                  {topic.links.map((link, idx) => (
+                    <li key={idx} className="mb-2">
+                      <a
+                        href="#"
+                        style={{ textDecoration: "none" }}
+                      >
+                        {link}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
 
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
+      </div>
     </section>
   );
 }

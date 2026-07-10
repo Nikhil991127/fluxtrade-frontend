@@ -1,69 +1,58 @@
 import React from "react";
+import { CandlePanel, AreaPanel, DonutPanel, CodePanel, BarPanel, StoreButton } from "../Illustrations";
+
+const ILLUSTRATIONS = {
+  candle: (name) => <CandlePanel label={`${name.toUpperCase()} // LIVE`} tone="accent" seed={0} height={240} />,
+  area: (name) => <AreaPanel label={`${name.toUpperCase()} // SIP GROWTH`} tone="accent" seed={0} height={240} />,
+  donut: (name) => <DonutPanel label={`${name.toUpperCase()} // ALLOCATION`} tone="coral" height={240} />,
+  code: (name) => <CodePanel label={`${name.toUpperCase()} // REQUEST`} height={240} />,
+  bar: (name) => <BarPanel label={`${name.toUpperCase()} // LESSONS`} tone="coral" height={240} />,
+};
 
 function LeftSection({ data }) {
   return (
-    <section className="container my-5">
-      <div className="row align-items-center gy-4">
+    <section className="section-flux">
+      <div className="container">
+        <div className="row align-items-center gy-4">
 
-        {/* Image Section */}
-        <div className="col-12 col-lg-6 text-center">
-          <img
-            src={data.imageURL}
-            alt={data.productName}
-            className="img-fluid"
-            style={{ maxWidth: "100%" }}
-          />
-        </div>
+          {/* Illustration Section */}
+          <div className="col-12 col-lg-6">
+            {(ILLUSTRATIONS[data.illustration] || ILLUSTRATIONS.candle)(data.productName)}
+          </div>
 
-        {/* Content Section */}
-        <div className="col-12 col-lg-6">
-          <h1 className="mb-3">{data.productName}</h1>
+          {/* Content Section */}
+          <div className="col-12 col-lg-6">
+            <h1 className="display-flux-md mb-3">{data.productName}</h1>
 
-          <p className="text-muted mb-4">
-            {data.productDesription}
-          </p>
+            <p className="mb-4">
+              {data.productDesription}
+            </p>
 
-          {/* Links */}
-          <div className="d-flex flex-wrap gap-4 mb-4">
-            {data.tryDemo && (
-              <a href={data.tryDemo} className="fw-semibold text-decoration-none">
-                Try demo
-              </a>
-            )}
+            {/* Links */}
+            <div className="d-flex flex-wrap gap-4 mb-4">
+              {data.tryDemo !== undefined && (
+                <a href={data.tryDemo || "#"} className="link-flux">
+                  Try demo
+                </a>
+              )}
 
-            {data.learnMore && (
-              <a href={data.learnMore} className="fw-semibold text-decoration-none">
-                Learn more
-              </a>
+              {data.learnMore !== undefined && (
+                <a href={data.learnMore || "#"} className="link-flux">
+                  Learn more
+                </a>
+              )}
+            </div>
+
+            {/* Download options */}
+            {data.showBadges && (
+              <div className="d-flex flex-wrap gap-3">
+                <StoreButton platform="ios" />
+                <StoreButton platform="android" />
+              </div>
             )}
           </div>
 
-          {/* Store Badges */}
-          <div className="d-flex flex-wrap gap-4">
-            {data.googlePlay && (
-              <a href={data.googlePlay}>
-                <img
-                  src="media/images/googlePlayBadge.svg"
-                  alt="Google Play"
-                  className="img-fluid"
-                  style={{ maxWidth: "160px" }}
-                />
-              </a>
-            )}
-
-            {data.appStore && (
-              <a href={data.appStore}>
-                <img
-                  src="media/images/appstoreBadge.svg"
-                  alt="App Store"
-                  className="img-fluid"
-                  style={{ maxWidth: "160px" }}
-                />
-              </a>
-            )}
-          </div>
         </div>
-
       </div>
     </section>
   );

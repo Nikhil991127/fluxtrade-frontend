@@ -1,43 +1,37 @@
 import React from "react";
+import { AreaPanel } from "../Illustrations";
 
 function Hero({
-  image = "media/images/homeHero.png",
-  title = "Invest in everything",
-  description = "Online platform to invest in stocks, derivatives, mutual funds, and more",
-  buttonText = "Sign up now",
+  title = "Built by traders, for traders",
+  description = "We started Fluxtrade because the accounts we already had were working against us, not for us.",
+  buttonText = "Open free account",
   onButtonClick,
 }) {
   return (
-    <section className="container-fluid my-5 px-3 overflow-hidden">
+    <section className="container-fluid px-3 overflow-hidden" style={{ paddingTop: "9rem", paddingBottom: "3rem" }}>
       <div className="row justify-content-center">
         <div className="col-12 col-lg-10 text-center">
 
-          {/* Hero Image */}
-          <img
-            src={image}
-            alt="Hero"
-            className="img-fluid w-100 mb-4"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              objectFit: "contain",
-            }}
-          />
+          <div className="eyebrow justify-content-center">Who we are</div>
 
           {/* Text */}
-          <h1 className="mb-3">{title}</h1>
+          <h1 className="display-flux mb-3">{title}</h1>
 
-          <p className="mb-4 text-muted">
+          <p className="mb-4 mx-auto" style={{ maxWidth: "520px" }}>
             {description}
           </p>
 
           {/* CTA */}
           <button
-            className="btn btn-primary btn-lg px-5"
+            className="btn-flux mb-5"
             onClick={onButtonClick}
           >
-            {buttonText}
+            {buttonText} <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </button>
+
+          <div className="text-start">
+            <AreaPanel label="FLUXTRADE // ACCOUNTS SINCE LAUNCH" tone="accent" seed={0} height={240} />
+          </div>
 
         </div>
       </div>

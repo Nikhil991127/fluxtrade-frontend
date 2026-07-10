@@ -1,74 +1,78 @@
 import React from "react";
+import { NetworkMark } from "../Illustrations";
 
 const universeData = [
   {
-    image: "media/images/dittoLogo.png",
-    alt: "Zerodha Fundhouse",
+    tone: "accent",
+    name: "Meridian AMC",
     description:
-      "Our asset management venture that is creating simple and transparent index funds to help you save for your goals.",
+      "Our asset management arm, building simple low-cost index funds so long-term saving doesn't need a finance degree.",
   },
   {
-    image: "media/images/sensibullLogo.svg",
-    alt: "Sensibull",
+    tone: "coral",
+    name: "OptionEdge",
     description:
-      "Options trading platform that lets you create strategies, analyze positions, and examine data points like open interest, FII/DII, and more.",
+      "An options analytics platform for building strategies, tracking positions, and reading open interest without fifteen browser tabs.",
   },
   {
-    image: "media/images/dittoLogo.png",
-    alt: "Rainmatter",
+    tone: "accent",
+    name: "Northlight Research",
     description:
-      "Investment research platform that offers detailed insights on stocks, sectors, supply chains, and more.",
+      "Independent research on stocks, sectors, and supply chains, written for people who want the reasoning, not just the rating.",
   },
   {
-    image: "media/images/dittoLogo.png",
-    alt: "Zerodha Fundhouse",
+    tone: "coral",
+    name: "Meridian AMC",
     description:
-      "Our asset management venture that is creating simple and transparent index funds to help you save for your goals.",
+      "Our asset management arm, building simple low-cost index funds so long-term saving doesn't need a finance degree.",
   },
   {
-    image: "media/images/sensibullLogo.svg",
-    alt: "Sensibull",
+    tone: "accent",
+    name: "OptionEdge",
     description:
-      "Options trading platform that lets you create strategies, analyze positions, and examine data points like open interest, FII/DII, and more.",
+      "An options analytics platform for building strategies, tracking positions, and reading open interest without fifteen browser tabs.",
   },
   {
-    image: "media/images/dittoLogo.png",
-    alt: "Rainmatter",
+    tone: "coral",
+    name: "Northlight Research",
     description:
-      "Investment research platform that offers detailed insights on stocks, sectors, supply chains, and more.",
+      "Independent research on stocks, sectors, and supply chains, written for people who want the reasoning, not just the rating.",
   },
 ];
 
 function Universe() {
   return (
-    <section className="container my-5">
+    <section className="section-flux">
+      <div className="container">
 
-      {/* Header */}
-      <div className="text-center mb-5 px-3">
-        <h1 className="pt-4">The Zerodha Universe</h1>
-        <p className="fs-6 mt-3">
-          Extend your trading and investment experience even further with our
-          partner platforms
-        </p>
+        {/* Header */}
+        <div className="text-center mb-5 px-3">
+          <div className="eyebrow justify-content-center">Ecosystem</div>
+          <h1 className="display-flux-md">The Flux Network</h1>
+          <p className="mt-3">
+            Extend your trading and investing beyond one app, without leaving
+            people you trust.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="row gy-4 text-center">
+          {universeData.map((item, index) => (
+            <div key={index} className="col-12 col-md-6 col-lg-4">
+              <div className="card-flux">
+                <div className="d-flex justify-content-center mb-3">
+                  <NetworkMark tone={item.tone} />
+                </div>
+                <h4 className="mb-2" style={{ fontSize: "1.05rem" }}>{item.name}</h4>
+                <p className="px-2 mb-0">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
-
-      {/* Cards */}
-      <div className="row gy-5 text-center">
-        {universeData.map((item, index) => (
-          <div key={index} className="col-12 col-md-6 col-lg-4">
-            <img
-              src={item.image}
-              alt={item.alt}
-              className="img-fluid mb-3"
-              style={{ maxWidth: "180px" }}
-            />
-            <p className="px-3 text-muted">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
-
     </section>
   );
 }

@@ -1,31 +1,37 @@
 import React from "react";
+import TrendDivider from "./TrendDivider";
 
 const accountData = {
   title: "Open a FluxTrade account",
   description:
-    "Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and F&O trades.",
+    "Modern platforms and apps, ₹0 delivery investing, and flat ₹15 intraday and F&O trades.",
   buttonText: "Sign up now",
 };
 
 function OpenAccount() {
   return (
-    <section className="container my-5">
-      <div className="row justify-content-center text-center px-3">
+    <>
+      <TrendDivider flat />
+      <section className="section-flux bg-ink2-flux">
+        <div className="container">
+          <div className="row justify-content-center text-center px-3">
 
-        <div className="col-12 col-md-10 col-lg-8">
-          <h1 className="mb-3">{accountData.title}</h1>
+            <div className="col-12 col-md-10 col-lg-8">
+              <h1 className="display-flux-md mb-3">{accountData.title}</h1>
 
-          <p className="mb-4 text-muted">
-            {accountData.description}
-          </p>
+              <p className="mb-4">
+                {accountData.description}
+              </p>
 
-          <button className="btn btn-primary btn-lg px-5">
-            {accountData.buttonText}
-          </button>
+              <button className="btn-flux">
+                {accountData.buttonText} <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+          </div>
         </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

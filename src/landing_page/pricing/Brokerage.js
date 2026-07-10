@@ -11,7 +11,7 @@ const equityTable = {
     "F&O - Options",
   ],
   rows: [
-    ["Brokerage", "Zero Brokerage", "0.03% or ₹20/order", "0.03% or ₹20/order", "₹20/order"],
+    ["Brokerage", "Zero Brokerage", "0.03% or ₹15/order", "0.03% or ₹15/order", "₹15/order"],
     ["STT / CTT", "0.1% buy/sell", "0.025% sell", "0.02% sell", "0.1% sell (premium)"],
     [
       "Transaction charge",
@@ -36,55 +36,55 @@ function Brokerage() {
   const [activeTab, setActiveTab] = useState("Equity");
 
   return (
-    <section className="container my-5">
+    <section className="section-flux">
+      <div className="container">
 
-      {/* Tabs */}
-      <div className="d-flex gap-4 border-bottom pb-2 mb-4 flex-wrap">
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className={`btn p-0 fw-semibold ${
-              activeTab === tab ? "text-primary border-bottom border-2" : "text-muted"
-            }`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
+        {/* Tabs */}
+        <div className="d-flex gap-4 pb-2 mb-4 flex-wrap" style={{ borderBottom: "1px solid var(--line)" }}>
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              className={`tab-flux ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
 
-      {/* Table */}
-      {activeTab === "Equity" && (
-        <div className="table-responsive">
-          <table className="table table-bordered align-middle text-center">
-            <thead className="table-light">
-              <tr>
-                {equityTable.headers.map((head, i) => (
-                  <th key={i}>{head}</th>
-                ))}
-              </tr>
-            </thead>
-
-            <tbody>
-              {equityTable.rows.map((row, i) => (
-                <tr key={i}>
-                  {row.map((cell, j) => (
-                    <td key={j}>{cell}</td>
+        {/* Table */}
+        {activeTab === "Equity" && (
+          <div className="table-responsive">
+            <table className="table-flux">
+              <thead>
+                <tr>
+                  {equityTable.headers.map((head, i) => (
+                    <th key={i}>{head}</th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+              </thead>
 
-      {/* Placeholder for other tabs */}
-      {activeTab !== "Equity" && (
-        <p className="text-muted text-center">
-          {activeTab} brokerage details coming soon.
-        </p>
-      )}
+              <tbody>
+                {equityTable.rows.map((row, i) => (
+                  <tr key={i}>
+                    {row.map((cell, j) => (
+                      <td key={j}>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
 
+        {/* Placeholder for other tabs */}
+        {activeTab !== "Equity" && (
+          <p className="text-center">
+            {activeTab} brokerage details coming soon.
+          </p>
+        )}
+
+      </div>
     </section>
   );
 }

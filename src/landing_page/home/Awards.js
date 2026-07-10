@@ -1,59 +1,51 @@
 import React from "react";
+import { CodePanel } from "../Illustrations";
 
 function Awards() {
   return (
-    <section className="container mt-5">
-      <div className="row align-items-center">
+    <section className="section-flux bg-surface-flux">
+      <div className="container">
+        <div className="row align-items-center gy-4">
 
-        {/* Image Section */}
-        <div className="col-12 col-lg-6 p-3 p-lg-5 text-center">
-          <img
-            src="media/images/largestBroker.svg"
-            alt="Largest Broker"
-            className="img-fluid"
-            style={{ maxWidth: "100%" }}
-          />
-        </div>
+          {/* Illustration Section */}
+          <div className="col-12 col-lg-6 p-3 p-lg-5">
+            <CodePanel label="ORDER ENGINE // REQUEST" height={240} />
+          </div>
 
-        {/* Content Section */}
-        <div className="col-12 col-lg-6 p-3 p-lg-5">
-          <h1 className="mb-3 text-center text-lg-start">
-            Largest stock broker in India
-          </h1>
+          {/* Content Section */}
+          <div className="col-12 col-lg-6 p-3 p-lg-5">
+            <div className="eyebrow justify-content-center justify-content-lg-start">Under the hood</div>
 
-          <p className="mb-4 text-center text-lg-start">
-            Clients contribute to over <strong>15%</strong> of all retail order
-            volumes in India daily by trading and investing in:
-          </p>
+            <h1 className="display-flux-md mb-3 text-center text-lg-start">
+              Built on our own matching engine
+            </h1>
 
-          <div className="row">
-            <div className="col-12 col-sm-6">
-              <ul className="list-unstyled">
-                <li className="mb-2">✔ Futures and Options</li>
-                <li className="mb-2">✔ Commodity derivatives</li>
-                <li className="mb-2">✔ Currency derivatives</li>
-              </ul>
-            </div>
+            <p className="mb-4 text-center text-lg-start">
+              Most brokers rent their trading infrastructure. We built ours,
+              which means orders reach the exchange faster and nothing about
+              your account depends on a third party staying online:
+            </p>
 
-            <div className="col-12 col-sm-6">
-              <ul className="list-unstyled">
-                <li className="mb-2">✔ Stocks & IPOs</li>
-                <li className="mb-2">✔ Direct mutual funds</li>
-                <li className="mb-2">✔ Bonds and Govt. Securities</li>
-              </ul>
+            <div className="row">
+              <div className="col-12 col-sm-6">
+                <ul className="list-unstyled">
+                  <li className="mb-2">✔ Sub-50ms order routing</li>
+                  <li className="mb-2">✔ Direct exchange connectivity</li>
+                  <li className="mb-2">✔ Real-time risk engine</li>
+                </ul>
+              </div>
+
+              <div className="col-12 col-sm-6">
+                <ul className="list-unstyled">
+                  <li className="mb-2">✔ In-house custody &amp; settlement</li>
+                  <li className="mb-2">✔ Automated tax statements</li>
+                  <li className="mb-2">✔ Public developer API</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div className="text-center text-lg-start mt-4">
-            <img
-              src="media/images/pressLogos.png"
-              alt="Press logos"
-              className="img-fluid"
-              style={{ maxWidth: "90%" }}
-            />
-          </div>
         </div>
-
       </div>
     </section>
   );

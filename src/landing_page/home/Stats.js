@@ -1,69 +1,68 @@
 import React from "react";
+import { AreaPanel } from "../Illustrations";
 
 const statsData = [
   {
-    title: "Customer-first always",
+    title: "Support that answers",
     description:
-      "That's why customers trust FluxTrade with their equity investments.",
+      "Real people, median first-response under four minutes, no ticket queue purgatory.",
   },
   {
-    title: "No spam or gimmicks",
+    title: "No gamified dashboards",
     description:
-      "No gimmicks, spam, gamification, or annoying push notifications. High quality apps you use at your pace.",
+      "No streaks, no confetti, no push notifications engineered to get you trading more.",
   },
   {
-    title: "The universe",
+    title: "One connected network",
     description:
-      "Not just an app, but a whole ecosystem. Our investments in 30+ fintech startups offer tailored services.",
+      "Research, options analytics, and asset management under one login, not five separate apps.",
   },
   {
-    title: "Do better with money",
+    title: "Guardrails, not lectures",
     description:
-      "With initiatives like Nudge and Kill Switch, we help you actively make better financial decisions.",
+      "Cooldown mode and position alerts step in before a bad day turns into a bad month.",
   },
 ];
 
 function Stats() {
   return (
-    <section className="container my-5">
-      <div className="row align-items-center gy-4">
+    <section className="section-flux">
+      <div className="container">
+        <div className="row align-items-center gy-4">
 
-        {/* Text Section */}
-        <div className="col-12 col-lg-6">
-          <h1 className="fs-2 mb-4 text-center text-lg-start">
-            Trust with confidence
-          </h1>
+          {/* Text Section */}
+          <div className="col-12 col-lg-6">
+            <div className="eyebrow justify-content-center justify-content-lg-start">Why us</div>
+            <h1 className="display-flux-md mb-4 text-center text-lg-start">
+              Trust with confidence
+            </h1>
 
-          {statsData.map((item, index) => (
-            <div key={index} className="mb-4">
-              <h2 className="fs-5">{item.title}</h2>
-              <p className="text-muted mb-0">{item.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Image + CTA Section */}
-        <div className="col-12 col-lg-6 text-center">
-          <img
-            src="media/images/ecosystem.png"
-            alt="FluxTrade Ecosystem"
-            className="img-fluid mb-4"
-            style={{ maxWidth: "90%" }}
-          />
-
-          <div className="d-flex flex-column flex-sm-row justify-content-center gap-4">
-            <a href="#" className="text-decoration-none fw-semibold">
-              Explore our products
-              <i className="fa fa-long-arrow-right ms-2" aria-hidden="true"></i>
-            </a>
-
-            <a href="#" className="text-decoration-none fw-semibold">
-              Try Kite demo
-              <i className="fa fa-long-arrow-right ms-2" aria-hidden="true"></i>
-            </a>
+            {statsData.map((item, index) => (
+              <div key={index} className="mb-4" style={{ borderLeft: "2px solid var(--line)", paddingLeft: "1rem" }}>
+                <h2 className="fs-5 mb-1">{item.title}</h2>
+                <p className="mb-0">{item.description}</p>
+              </div>
+            ))}
           </div>
-        </div>
 
+          {/* Illustration + CTA Section */}
+          <div className="col-12 col-lg-6">
+            <AreaPanel label="NETWORK GROWTH" tone="accent" seed={1} height={260} />
+
+            <div className="d-flex flex-column flex-sm-row justify-content-center gap-4 mt-4">
+              <a href="#" className="link-flux">
+                Explore the network
+                <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+
+              <a href="#" className="link-flux">
+                Try Pulse demo
+                <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );
